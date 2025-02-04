@@ -1,6 +1,7 @@
 targets:
   $default:
     sources:
+      - "lib/src/domain/models/**/*"
       - "lib/src/domain/models/*"
     builders:
       json_serializable|json_serializable:

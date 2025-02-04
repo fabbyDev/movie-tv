@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../../../controllers/session_controller.dart';
 import '../../../routes/routes.dart';
 
+const baseUrlImage = 'https://image.tmdb.org/t/p';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -24,6 +26,10 @@ class _HomeViewState extends State<HomeView> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              if (user.avatarPath != null)
+                Image.network(
+                  '$baseUrlImage/w500${user.avatarPath}',
+                ),
               Text(user.username),
               TextButton(
                 onPressed: () async {
